@@ -22,4 +22,14 @@ public class CustomerController {
         return customerRepository.findByCourseId(id);
     }
 
+    @GetMapping("/search/findByTownAndCourseId")
+    public List<Customer> findByTownAndCourseId(@RequestParam String town, Long id){
+        return customerRepository.findByTownAndCourseId(town, id);
+    }
+
+    @GetMapping("/search/findByTownAndCourseIdOverAge")
+    public List<Customer> findByTownAndCourseIdOverAge(@RequestParam String town, Long id, int age){
+        return customerRepository.findByTownAndCourseIdOverAge(town, id, age);
+    }
+
 }
